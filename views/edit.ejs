@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier la Tâche</title>
+</head>
+<body>
+    <h1>Modifier la Tâche</h1>
+    
+    <!-- Formulaire pour modifier une tâche -->
+    <form action="/edit/<%= task.id %>" method="POST">
+        <input type="text" name="newTask" value="<%= task.description %>" required>
+        <button type="submit">Modifier</button>
+    </form>
+
+    <!-- Lien pour revenir à la liste des tâches -->
+    <a href="/">Retour à la liste des tâches</a>
+</body>
+</html>

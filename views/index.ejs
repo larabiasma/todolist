@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>Liste des Tâches</h1>
+
+    <!-- Lien pour ajouter une nouvelle tâche -->
+    <a href="/add">
+        <button type="button">Ajouter</button>
+    </a>
+
+    <% tasks.forEach(task => { %>
+        <div>
+            <span><%= task.description %></span>
+
+            <!-- Formulaire pour supprimer une tâche -->
+            <form action="/delete/<%= task.id %>" method="POST" style="display: inline;">
+                <button type="submit">Supprimer</button>
+            </form>
+
+            <!-- Lien pour modifier une tâche -->
+            <a href="/edit/<%= task.id %>">
+                <button type="button">Modifier</button>
+            </a>
+        </div>
+    <% }) %>
+</body>
+</html>
